@@ -1,9 +1,9 @@
 server:
-  port: 3001
+  port: 4000
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka3000.com:3000/eureka/  #eureka服务端提供的注册地址 参考服务端配置的这个路径
+      defaultZone: http://eureka3000.com:3000/eureka  #eureka服务端提供的注册地址 参考服务端配置的这个路径
   instance:
     instance-id: power  #此实例注册到eureka服务端的唯一的实例ID
     prefer-ip-address: true  #是否显示IP地址

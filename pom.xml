@@ -7,6 +7,7 @@
     <groupId>com.kzhou.springcloud</groupId>
     <artifactId>spring-cloud</artifactId>
     <packaging>pom</packaging>
+    <!--SpringBoot的版本控制-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>

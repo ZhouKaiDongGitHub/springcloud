@@ -10,10 +10,10 @@ import org.springframework.web.client.RestTemplate;
 @ComponentScan("com.kzhou.luban")
 public class AppConfig {
 
-    /*@Bean
+    @Bean
     public TomcatServletWebServerFactory tomcat(){
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
         tomcat.setPort(6000);
         return tomcat;
-    }*/
+    }
 }

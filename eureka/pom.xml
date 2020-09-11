@@ -13,11 +13,17 @@
     <artifactId>eureka</artifactId>
 
     <dependencies>
+        <!--SpringBoot已经针对自己以及市场主流的组件进行了扩展，他的核心功能是自动配置，本子是一个SpringIOC-->
+        <!--例如：Web功能 AOP功能 Data功能 Mybatis功能 MQ功能 Reids功能 等等-->
+
+        <!--当然这边其实可以不用这个web的因为eureka服务端已经包含了一个web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--Spring为了实现分布式，微服务能力，
+                把市场上主流的解决微服务的java组件拿过来并且借助SpringBoot组成了自己的SpringCloud-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
