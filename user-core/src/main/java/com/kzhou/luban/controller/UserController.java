@@ -1,6 +1,7 @@
 package com.kzhou.luban.controller;
 
 import com.kzhou.luban.service.OrderServiceClient;
+import com.kzhou.luban.service.PowerServiceClient;
 import com.kzhou.luban.util.R;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
@@ -31,6 +32,9 @@ public class UserController {
     @Autowired
     OrderServiceClient orderServiceClient;
 
+    @Autowired
+    PowerServiceClient powerServiceClient;
+
     @RequestMapping("/getUser.do")
     public R getUser(){
         Map<String,Object> map = new HashMap();
@@ -48,6 +52,11 @@ public class UserController {
     @RequestMapping("/getPower-ribbon.do")
     public R getPowerRibbon(){
         return R.success("返回成功",restTemplate.getForObject(POWER_URL+"/getPower-ribbon.do",Object.class));
+    }
+
+    @RequestMapping("/getFeignPower.do")
+    public R getFeignPower(){
+        return R.success("操作成功", powerServiceClient.getPower());
     }
 
     @RequestMapping("/getOrder.do")
