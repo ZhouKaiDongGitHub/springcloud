@@ -18,4 +18,11 @@ public class PowerController {
         return map;
     }
 
+    @RequestMapping("/getPower-ribbon.do")
+    public Object getPower(){
+        Map<String,Object> map = new HashMap<>();
+        map.put("key","getPower-ribbon1");
+
+        return map;
+    }
 }

@@ -3,7 +3,7 @@ server:
 eureka:
   client:
     serviceUrl:
-        defaultZone: http://eureka3000.com:3000/eureka #eureka服务端提供的注册地址 参考服务端配置的这个路径
+        defaultZone: http://eureka3000.com:3000/eureka,http://eureka3001.com:3001/eureka,http://eureka3002.com:3002/eureka #eureka服务端提供的注册地址 参考服务端配置的这个路径
   instance:
     instance-id: user-1 #此实例注册到eureka服务端的唯一的实例ID
     prefer-ip-address: true #是否显示IP地址
@@ -13,3 +13,22 @@ eureka:
 spring:
   application:
     name: client-user #此实例注册到eureka服务端的name
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000  #服务方法调用的超时时间，过了这个事件调用备用方法（降级方法）
+      circuitBreaker:
+        requestVolumeThreshold: 5  #断路器的配置  10s钟内5次请求失败，则在接下来一段时间直接调用备用方法（降级方法）
+        sleepWindowInMilliseconds : 5000   # 上面的一段时间
+
+  threadpool:
+    default:
+      coreSize: 10 #默认每个服务分配的线程池中请求数量为10，多余这个的都会走备用方法（降级方法）

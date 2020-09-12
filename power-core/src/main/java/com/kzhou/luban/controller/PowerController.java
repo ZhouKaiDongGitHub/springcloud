@@ -11,9 +11,17 @@ import java.util.Map;
 public class PowerController {
 
     @RequestMapping("/getPower.do")
-    public Object getPower(){
+    public Object getPoder(){
         Map<String,Object> map = new HashMap();
         map.put("key","power");
+        return map;
+    }
+
+    @RequestMapping("/getPower-ribbon.do")
+    public Object getPower(){
+        Map<String,Object> map = new HashMap<>();
+        map.put("key","getPower-ribbon");
+
         return map;
     }
 }

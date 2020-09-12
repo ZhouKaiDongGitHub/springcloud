@@ -1,6 +1,10 @@
 package com.kzhou.luban.config;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
+import com.netflix.loadbalancer.RetryRule;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,11 +14,20 @@ import org.springframework.web.client.RestTemplate;
 //@ComponentScan("com.kzhou.luban")
 public class AppConfig {
 
+    /**
+     * @LoadBalanced 就是Ribbon实现客户端负载均衡的配置点
+     * 当一个RPC调用点添加了这个注解之后，其对象在通过注册在eureka上的微服务名称负载返回的服务器ip
+     */
     @Bean
+    @LoadBalanced
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
 
+    /*@Bean
+    public IRule iRule(){
+        return new RetryRule();
+    }*/
 
     @Bean
     /**
