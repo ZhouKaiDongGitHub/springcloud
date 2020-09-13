@@ -10,31 +10,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kzhou.springcloud</groupId>
-    <artifactId>user-core</artifactId>
+    <artifactId>zuul</artifactId>
+
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-
-        <!--Hystrix为了分布式系统的容错，由于网络和故障，防止雪崩情况。-->
-        <!--Hystrix通过熔断，限流，降级来处理。-->
-        <!--***程序出现BUG,数据库查询条件错误，缓存击穿，响应过慢等等-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>
-
+        <!--zull隐藏了域名服务器，通过和eureka整合，直接暴露了eureka上面的服务，-->
+        <!--这样一来，所有微服务之间的调用都会通过zull进行路由-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
@@ -53,8 +39,8 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-	
-	<build>
+
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

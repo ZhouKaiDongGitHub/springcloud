@@ -18,7 +18,7 @@ public class OrderController {
         /*if(StringUtils.isEmpty(name)){
             throw new Exception();
         }*/
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
         return map;
     }
 }
