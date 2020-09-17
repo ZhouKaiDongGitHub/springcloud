@@ -1,10 +1,10 @@
-spring:
-  cloud:
-    config:
-      name: test-config #这是我们要读取的配置文件名 对应获取规则的{application}  我们获取到了这个文件，怎么应用这个文件呢？这个文件如何对我的其他应用产生效果呢？？
-      profile: dev   #这个是要获取的环境 对应的便是{profile}
-      label: master #这个就是获取的节点 对应的是{label}
-      discovery:
-        enabled: true
-        service-id: test
-      uri : http://localhost:1000/ #这就是我们config server的一个地址
+#spring:
+#  cloud:
+#    config:
+#      name: test-config #这是我们要读取的配置文件名 对应获取规则的{application}  我们获取到了这个文件，怎么应用这个文件呢？这个文件如何对我的其他应用产生效果呢？？
+#      profile: dev   #这个是要获取的环境 对应的便是{profile}
+#      label: master #这个就是获取的节点 对应的是{label}
+#      discovery:
+#        enabled: true
+#        service-id: test
+#      uri : http://localhost:1000/ #这就是我们config server的一个地址
