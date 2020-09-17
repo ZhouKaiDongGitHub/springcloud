@@ -35,7 +35,8 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
-        <!--执行器是HystrixDashBoard必须依赖的包-->
+        <!--执行器Actuator通过提供一些api来监控本微服务的一些接口流信息，可以实现监控功能，如果想要被
+            HystrixDashBoard监控到，需要加上这个包，并且配置暴露所有端口-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

@@ -15,18 +15,18 @@
     </parent>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>user-core</module>
-        <module>power-core</module>
+        <module>user-core5000</module>
+        <module>power-core6000</module>
         <module>power1-core</module>
-        <module>eureka</module>
+        <module>eureka3000</module>
         <module>eureka3001</module>
         <module>eureka3002</module>
-        <module>order-core</module>
+        <module>order-core7000</module>
         <module>order1-core</module>
-        <module>zuul</module>
+        <module>zuul4000</module>
         <module>zuul2</module>
         <module>zuul3</module>
-        <module>hystrix-dashboard</module>
+        <module>hystrix-dashboard2000</module>
         <module>config-server</module>
         <module>config-server-client</module>
         <module>zipkin-server</module>
