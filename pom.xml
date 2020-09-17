@@ -28,6 +28,8 @@
         <module>zuul3</module>
         <module>hystrix-dashboard</module>
         <module>config-server</module>
+        <module>config-server-client</module>
+        <module>zipkin-server</module>
     </modules>
 
     <dependencyManagement>
