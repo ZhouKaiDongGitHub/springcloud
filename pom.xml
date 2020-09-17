@@ -27,7 +27,7 @@
         <module>zuul2</module>
         <module>zuul3</module>
         <module>hystrix-dashboard2000</module>
-        <module>config-server</module>
+        <module>config-server1000</module>
         <module>config-server-client</module>
         <module>zipkin-server</module>
     </modules>
