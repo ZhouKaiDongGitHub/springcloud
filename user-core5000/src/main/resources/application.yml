@@ -10,9 +10,16 @@ eureka:
     leaseRenewalIntervalInSeconds: 10 #eureka客户需要多长时间发送心跳给eureka服务器，表明它仍然活着,默认为30 秒 (与下面配置的单位都是秒)
     leaseExpirationDurationInSeconds: 30 #Eureka服务器在接收到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除，默认为90秒
 
+
 spring:
   application:
     name: client-user #此实例注册到eureka服务端的name
+  zipkin:
+    base-url: http://localhost:8500   #指定Zipkin server地址
+  sleuth:
+    sampler:
+      probability: 1.0  #request采样的数量的标准 默认是0.1 也即是10%  顾名思义 采取10%的请求数据  因为在分布式系统中，数据量可能会非常大，因此采样非常重要。我们示例数据少最好配置为1全采样
+
 
 feign:
   hystrix:
@@ -38,3 +45,6 @@ management:
     web:
       exposure:
         include: '*'
+
+
+

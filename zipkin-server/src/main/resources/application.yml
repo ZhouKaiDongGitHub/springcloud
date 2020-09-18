@@ -1,11 +1,8 @@
-
 management:
   metrics:
     web:
       server:
         autoTimeRequests: false
-server:
-  port: 9000
 
 zipkin:
   storage:
@@ -15,4 +12,8 @@ zipkin:
       hosts: http://localhost:9200
       index: zipkin
 
-
+spring:
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8500

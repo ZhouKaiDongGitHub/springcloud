@@ -59,6 +59,7 @@ public class UserController {
         return R.success("操作成功", powerServiceClient.getPower());
     }
 
+
     @RequestMapping("/getOrder.do")
     public R getOrder(){
         return R.success("返回成功",restTemplate.getForObject(ORDER_URL+"/getOrder.do",Object.class));
