@@ -30,6 +30,7 @@
         <module>config-server1000</module>
         <module>config-server-client</module>
         <module>zipkin-server</module>
+        <module>demo-project</module>
     </modules>
 
     <dependencyManagement>
